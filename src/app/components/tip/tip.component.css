@@ -1,0 +1,62 @@
+.tip_amount {
+  border-radius: 1.2rem;
+  background-color: #003F42;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  padding: 35px;
+}
+
+@media (max-width: 375px) {
+  .tip_amount__person > div {
+    font-size: 0.875rem !important;
+
+  }
+  .values {
+    font-size: 1.45rem !important;
+    justify-self:start;
+  }
+}
+
+.tip_amount__person {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  line-height: 1;
+  margin-bottom: 50px;
+  padding: 20px 10px;
+
+}
+
+sub {
+  font-size: 0.875rem;
+  color: #5e7a7d;
+}
+
+.values {
+  color: #26c0ab;
+  justify-self: end;
+  font-size: 2.6rem;
+}
+
+.btn-reset {
+  background-color: #26c0ab;
+  border: none;
+  border-radius: 5px;
+  color: #003F42;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Space Mono', monospace;
+  justify-self: center;
+  text-transform: uppercase;
+  grid-column: 1 / -1;
+  padding: 8px;
+  width: 90%;
+}
+
+.btn-reset:hover {
+  background-color: #8af5e7 !important;
+}
+

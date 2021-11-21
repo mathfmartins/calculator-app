@@ -1,0 +1,106 @@
+h1 {
+  color: #5e7a7d;
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+}
+
+.bill-container > div, input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.bill {
+  position: relative;
+}
+
+.number-of-people {
+  position: relative;
+}
+
+.img-person {
+  position: absolute;
+  left: 1.5rem;
+  top: 3rem;
+}
+
+.img-dollar {
+  bottom: 2.1rem;
+  left: 1.5rem;
+  position: absolute;
+}
+
+.inputs {
+  background-color: rgba(77, 147, 175, 0.1);
+  border: none;
+  border-radius: 5px;
+  color: #00494d;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: end;
+  padding: 6px;
+  width: 100%;
+}
+
+
+.input-text {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color:rgba(77, 147, 175, 1);
+  font-weight: bold;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: 0.1s;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  transition: 0.2s;
+}
+
+
+.input-border:focus {
+  outline-style:solid;
+  outline: 0.4;
+  outline-color: #c5e4e7;
+  border: 2px solid #26c0ab;
+
+}
+
+.tips {
+  align-content: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tips button {
+   border: none;
+   border-radius: 5px;
+   background-color: #003F42;
+   cursor: pointer;
+   color: white;
+   font-family: 'Space Mono', monospace;
+   font-size: 1.2rem;
+   font-weight: bold;
+   transition: 0.4s;
+   text-align: center;
+   padding: 5px 2px;
+}
+
+.btn-bill:hover {
+  background-color: #8af5e7 !important;
+}
+
+.btn-bill-active {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
+.tips > button:focus {
+   background-color: #26c0ab;
+   color: #003F42;
+}
+
+
