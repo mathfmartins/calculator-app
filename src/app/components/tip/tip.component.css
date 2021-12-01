@@ -1,4 +1,4 @@
-.tip_amount {
+.section {
   border-radius: 1.2rem;
   background-color: #003F42;
   display: grid;
@@ -9,17 +9,17 @@
 }
 
 @media (max-width: 375px) {
-  .tip_amount__person > div {
+  .section__amount > div {
     font-size: 0.875rem !important;
 
   }
-  .values {
+  .section__values {
     font-size: 1.45rem !important;
     justify-self:start;
   }
 }
 
-.tip_amount__person {
+.section__amount {
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -34,13 +34,13 @@ sub {
   color: #5e7a7d;
 }
 
-.values {
+.section__values {
   color: #26c0ab;
   justify-self: end;
   font-size: 2.6rem;
 }
 
-.btn-reset {
+.section__btn {
   background-color: #26c0ab;
   border: none;
   border-radius: 5px;
@@ -56,7 +56,7 @@ sub {
   width: 90%;
 }
 
-.btn-reset:hover {
+.section__btn:hover {
   background-color: #8af5e7 !important;
 }
 

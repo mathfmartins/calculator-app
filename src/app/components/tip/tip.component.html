@@ -1,19 +1,19 @@
-<section class="tip_amount">
-  <div class="tip_amount__person">
+<section class="section">
+  <div class="section__amount">
     <div>
       <p>Tip Amount</p>
       <sub>/ person</sub>
     </div>
-    <p class="values">{{tipAmount | currency }}</p>
+    <p class="section__values">{{tipAmount | currency }}</p>
 
   </div>
 
-  <div class="tip_amount__person">
+  <div class="section__amount">
     <div>
       <p>Total</p>
       <sub>/ person</sub>
     </div>
-    <p class="values">{{total | currency }}</p>
+    <p class="section__values">{{total | currency }}</p>
   </div>
-  <button (click)="reset()" class="btn-reset">Reset</button>
+  <button (click)="reset()" class="section__btn">Reset</button>
 </section>

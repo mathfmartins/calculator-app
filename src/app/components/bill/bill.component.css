@@ -95,10 +95,10 @@ h1 {
 }
 
 .section__btn:hover {
-  background-color: #8af5e7 !important;
+  background-color: #26c0ab !important;
 }
 
-.section__btn-active {
+.section__btn--active {
   background-color: #26c0ab;
   color: #00494d;
 }
