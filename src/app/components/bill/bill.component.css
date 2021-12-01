@@ -4,32 +4,32 @@ h1 {
   font-size: 14px;
 }
 
-.bill-container > div, input {
+.section > div, input {
   width: 100%;
   margin-bottom: 20px;
 }
 
-.bill {
+.section__bill {
   position: relative;
 }
 
-.number-of-people {
+.section__npeople {
   position: relative;
 }
 
-.img-person {
+.section__img___person {
   position: absolute;
   left: 1.5rem;
   top: 3rem;
 }
 
-.img-dollar {
+.section__img___dolar {
   bottom: 2.1rem;
   left: 1.5rem;
   position: absolute;
 }
 
-.inputs {
+.section__inputs {
   background-color: rgba(77, 147, 175, 0.1);
   border: none;
   border-radius: 5px;
@@ -43,7 +43,7 @@ h1 {
 }
 
 
-.input-text {
+.section__input___text {
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -60,7 +60,7 @@ h1 {
 }
 
 
-.input-border:focus {
+.section__border:focus {
   outline-style:solid;
   outline: 0.4;
   outline-color: #c5e4e7;
@@ -68,14 +68,14 @@ h1 {
 
 }
 
-.tips {
+.section__tips {
   align-content: center;
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.tips button {
+.section__tips button {
    border: none;
    border-radius: 5px;
    background-color: #003F42;
@@ -89,18 +89,19 @@ h1 {
    padding: 5px 2px;
 }
 
-.btn-bill:hover {
+.section__tips > button:focus {
+  background-color: #26c0ab;
+  color: #003F42;
+}
+
+.section__btn:hover {
   background-color: #8af5e7 !important;
 }
 
-.btn-bill-active {
+.section__btn-active {
   background-color: #26c0ab;
   color: #00494d;
 }
 
-.tips > button:focus {
-   background-color: #26c0ab;
-   color: #003F42;
-}
 
 

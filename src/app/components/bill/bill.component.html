@@ -1,9 +1,9 @@
-<section class="bill-container">
-  <div class="bill">
+<section class="section">
+  <div class="section__bill">
     <h1>Bill</h1>
     <input
       min="0"
-      class="inputs input-border"
+      class="section__inputs section__border"
       type="text"
       maxlength="6"
       placeholder="0.0"
@@ -11,21 +11,21 @@
       (keyup)="subjectBill.next($event.target.value)"
       (click)="subjectBill.next($event.target.value)"
     />
-    <img class="img-dollar" src="/assets/images/icon-dollar.svg" alt="dollar" />
+    <img class="section__img___dolar" src="/assets/images/icon-dollar.svg" alt="dollar" />
   </div>
 
 
 
   <h1>Select Tip %</h1>
-  <div class="tips">
-    <button (click)="subjectPercentage.next(2)" class="btn-bill">2%</button>
-    <button (click)="subjectPercentage.next(5)" class="btn-bill">5%</button>
-    <button (click)="subjectPercentage.next(10)" class="btn-bill">10%</button>
-    <button (click)="subjectPercentage.next(15)" class="btn-bill">15%</button>
-    <button (click)="subjectPercentage.next(25)" class="btn-bill">25%</button>
+  <div class="section__tips">
+    <button (click)="subjectPercentage.next(2)" class="section__btn">2%</button>
+    <button (click)="subjectPercentage.next(5)" class="section__btn">5%</button>
+    <button (click)="subjectPercentage.next(10)" class="section__btn">10%</button>
+    <button (click)="subjectPercentage.next(15)" class="section__btn">15%</button>
+    <button (click)="subjectPercentage.next(25)" class="section__btn">25%</button>
     <input
       min="0"
-      class="input-text input-border"
+      class="section__input___text section__border"
       type="number"
       name="tip"
       id="tip"
@@ -36,10 +36,10 @@
     />
   </div>
 
-  <div class="number-of-people">
+  <div class="section__npeople">
     <h1>Number of people</h1>
     <input
-      class="inputs input-border"
+      class="section__inputs section__border"
       type="text"
       maxlength="2"
       placeholder="1"
@@ -47,6 +47,6 @@
       (keyup)="subjectNumberOfPeople.next($event.target.value)"
       (click)="subjectNumberOfPeople.next($event.target.value)"
     />
-    <img class="img-person" src="/assets/images/icon-person.svg" alt="person" />
+    <img class="section__img___person" src="/assets/images/icon-person.svg" alt="person" />
   </div>
 </section>
