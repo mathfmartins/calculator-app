@@ -10,6 +10,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { Bill } from 'src/app/model/bill';
@@ -20,17 +21,22 @@ import { SubSink } from 'subsink';
   templateUrl: './bill.component.html',
   styleUrls: ['./bill.component.css'],
 })
-export class BillComponent implements OnInit, OnChanges, OnDestroy {
+export class BillComponent implements OnInit, OnDestroy {
   subs = new SubSink();
-  subjectBill = new Subject<number>();
-  subjectNumberOfPeople = new Subject<number>();
+  billInput = new FormControl();
+  numberOfPeopleInput = new FormControl();
   subjectPercentage = new Subject<number>();
-  subjectCustom = new Subject<number>();
+  customInput = new FormControl();
   @Output() eventEmitter = new EventEmitter<Bill>();
   billValue: number = 0;
   numberOfPeopleValue: number = 1;
   percentageValue: number = 0;
   tipAmount: number;
+  twoButton: boolean;
+  fiveButton: boolean;
+  tenButton: boolean;
+  feefteenButton: boolean;
+  twentyfiveButton: boolean;
   total: number;
   @Input() resetChangeCounter: number;
   @ViewChild('bill') bill: ElementRef;
@@ -40,13 +46,13 @@ export class BillComponent implements OnInit, OnChanges, OnDestroy {
   constructor() {}
 
   ngOnInit(): void {
-    this.subs.sink = this.subjectBill
+    this.subs.sink = this.billInput.valueChanges
       .pipe(debounceTime(300))
       .subscribe((value) => {
         (this.billValue = value), this.calculate();
       });
 
-    this.subs.sink = this.subjectNumberOfPeople
+    this.subs.sink = this.numberOfPeopleInput.valueChanges
       .pipe(debounceTime(300))
       .subscribe((value) => {
         if (value) (this.numberOfPeopleValue = value), this.calculate();
@@ -58,12 +64,62 @@ export class BillComponent implements OnInit, OnChanges, OnDestroy {
 
     this.subs.sink = this.subjectPercentage.subscribe((value) => {
       (this.percentageValue = value), this.calculate();
+      switch (this.percentageValue) {
+        case 2:
+          this.twoButton = true;
+          this.tenButton = false;
+          this.fiveButton = false;
+          this.feefteenButton = false;
+          this.twentyfiveButton = false;
+          break;
+        case 5:
+          this.twoButton = false;
+          this.tenButton = false;
+          this.fiveButton = true;
+          this.feefteenButton = false;
+          this.twentyfiveButton = false;
+          break;
+        case 10:
+          this.twoButton = false;
+          this.tenButton = true;
+          this.fiveButton = false;
+          this.feefteenButton = false;
+          this.twentyfiveButton = false;
+          break;
+        case 15:
+          this.twoButton = false;
+          this.tenButton = false;
+          this.fiveButton = false;
+          this.feefteenButton = true;
+          this.twentyfiveButton = false;
+          break;
+        case 25:
+          this.twoButton = false;
+          this.tenButton = false;
+          this.fiveButton = false;
+          this.feefteenButton = false;
+          this.twentyfiveButton = true;
+          break;
+        default:
+          this.twoButton = false;
+          this.tenButton = false;
+          this.fiveButton = false;
+          this.feefteenButton = false;
+          this.twentyfiveButton = false;
+          break;
+      }
     });
 
-    this.subs.sink = this.subjectCustom
+    this.subs.sink = this.customInput.valueChanges
       .pipe(debounceTime(300))
       .subscribe((value) => {
-        (this.percentageValue = value), this.calculate();
+        (this.percentageValue = value),
+        (this.twoButton = false);
+        this.tenButton = false;
+        this.fiveButton = false;
+        this.feefteenButton = false;
+        this.twentyfiveButton = false;
+        this.calculate();
       });
   }
 
@@ -72,18 +128,14 @@ export class BillComponent implements OnInit, OnChanges, OnDestroy {
       (this.billValue * this.percentageValue) / 100 / this.numberOfPeopleValue;
 
     this.total = this.billValue / this.numberOfPeopleValue + this.tipAmount;
-
-    this.eventEmitter.emit({ tipAmount: this.tipAmount, total: this.total });
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.resetChangeCounter) {
-      this.bill.nativeElement.value = '';
-      this.numberOfPeople.nativeElement.value = '';
-      this.percentage.nativeElement.value = '';
-      this.billValue = 0;
-      this.numberOfPeopleValue = 1;
+      this.billInput.setValue(0);
+      this.numberOfPeopleInput.setValue(1);
       this.percentageValue = 0;
+      this.customInput.setValue('');
     }
   }
 

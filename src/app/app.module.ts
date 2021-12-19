@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { BillComponent } from './components/bill/bill.component';
 import { TipComponent } from './components/tip/tip.component';
 import { CalculatorContainerComponent } from './components/calculator-container/calculator-container.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { CalculatorContainerComponent } from './components/calculator-container/
   imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [
     {
