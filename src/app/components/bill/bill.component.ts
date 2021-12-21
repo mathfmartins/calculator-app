@@ -3,7 +3,6 @@ import {
   ElementRef,
   EventEmitter,
   Input,
-  OnChanges,
   OnDestroy,
   OnInit,
   Output,
@@ -16,6 +15,7 @@ import { debounceTime } from 'rxjs/operators';
 import { Bill } from 'src/app/model/bill';
 import { SubSink } from 'subsink';
 
+const TYPING_TIME = 300;
 @Component({
   selector: 'app-bill',
   templateUrl: './bill.component.html',
@@ -47,13 +47,13 @@ export class BillComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subs.sink = this.billInput.valueChanges
-      .pipe(debounceTime(300))
+      .pipe(debounceTime(TYPING_TIME))
       .subscribe((value) => {
         (this.billValue = value), this.calculate();
       });
 
     this.subs.sink = this.numberOfPeopleInput.valueChanges
-      .pipe(debounceTime(300))
+      .pipe(debounceTime(TYPING_TIME))
       .subscribe((value) => {
         if (value) (this.numberOfPeopleValue = value), this.calculate();
         else {
@@ -111,7 +111,7 @@ export class BillComponent implements OnInit, OnDestroy {
     });
 
     this.subs.sink = this.customInput.valueChanges
-      .pipe(debounceTime(300))
+      .pipe(debounceTime(TYPING_TIME))
       .subscribe((value) => {
         (this.percentageValue = value),
         (this.twoButton = false);
