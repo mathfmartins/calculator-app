@@ -39,9 +39,9 @@ export class BillComponent implements OnInit, OnDestroy {
   twentyfiveButton: boolean;
   total: number;
   @Input() resetChangeCounter: number;
-  @ViewChild('bill') bill: ElementRef;
-  @ViewChild('numberOfPeople') numberOfPeople: ElementRef;
-  @ViewChild('percentage') percentage: ElementRef;
+  // @ViewChild('bill') bill: ElementRef;
+  // @ViewChild('numberOfPeople') numberOfPeople: ElementRef;
+  // @ViewChild('percentage') percentage: ElementRef;
 
   constructor() {}
 
@@ -125,7 +125,7 @@ export class BillComponent implements OnInit, OnDestroy {
 
   calculate(): void {
     this.tipAmount =
-      (this.billValue * this.percentageValue) / 100 / this.numberOfPeopleValue;
+      ((this.billValue * this.percentageValue) / 100) / this.numberOfPeopleValue;
 
     this.total = this.billValue / this.numberOfPeopleValue + this.tipAmount;
   }

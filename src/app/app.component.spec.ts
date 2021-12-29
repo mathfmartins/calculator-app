@@ -1,3 +1,4 @@
+import { AppModule } from './app.module';
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
@@ -7,6 +8,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [AppModule]
     }).compileComponents();
   });
 
@@ -22,10 +24,5 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('calculator');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('calculator app is running!');
-  });
+
 });
