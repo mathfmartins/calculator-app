@@ -39,9 +39,6 @@ export class BillComponent implements OnInit, OnDestroy {
   twentyfiveButton: boolean;
   total: number;
   @Input() resetChangeCounter: number;
-  // @ViewChild('bill') bill: ElementRef;
-  // @ViewChild('numberOfPeople') numberOfPeople: ElementRef;
-  // @ViewChild('percentage') percentage: ElementRef;
 
   constructor() {}
 
