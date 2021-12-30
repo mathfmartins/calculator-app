@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 96.0.4664.110 (Windows 10)" package="" timestamp="2021-12-30T18:31:20" id="0" hostname="DESKTOP-GEDJI2B" tests="8" errors="0" failures="0" time="0.154">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/96.0.4664.110 Safari/537.36"/>
+  </properties>
+  <testcase name="HeaderComponent should create" time="0.078" classname="Chrome_Headless_96_0_4664_110_(Windows_10).HeaderComponent"/>
+  <testcase name="TipComponent should create" time="0.012" classname="Chrome_Headless_96_0_4664_110_(Windows_10).TipComponent"/>
+  <testcase name="BillComponent should calculate tip amount when number of people input is more than one" time="0.016" classname="Chrome_Headless_96_0_4664_110_(Windows_10).BillComponent"/>
+  <testcase name="BillComponent should calculate tip amount when called" time="0.011" classname="Chrome_Headless_96_0_4664_110_(Windows_10).BillComponent"/>
+  <testcase name="BillComponent should create" time="0.01" classname="Chrome_Headless_96_0_4664_110_(Windows_10).BillComponent"/>
+  <testcase name="CalculatorContainerComponent should create" time="0.007" classname="Chrome_Headless_96_0_4664_110_(Windows_10).CalculatorContainerComponent"/>
+  <testcase name="AppComponent should have as title 'calculator'" time="0.014" classname="Chrome_Headless_96_0_4664_110_(Windows_10).AppComponent"/>
+  <testcase name="AppComponent should create the app" time="0.006" classname="Chrome_Headless_96_0_4664_110_(Windows_10).AppComponent"/>
+  <system-out>
+    <![CDATA[Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'formControl' since it isn't a known property of 'input'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'formControl' since it isn't a known property of 'input'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'formControl' since it isn't a known property of 'input'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'formControl' since it isn't a known property of 'input'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'formControl' since it isn't a known property of 'input'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'formControl' since it isn't a known property of 'input'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'formControl' since it isn't a known property of 'input'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'formControl' since it isn't a known property of 'input'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'formControl' since it isn't a known property of 'input'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: ''app-bill' is not a known element:
+1. If 'app-bill' is an Angular component, then verify that it is part of this module.
+2. If 'app-bill' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: ''app-tip' is not a known element:
+1. If 'app-tip' is an Angular component, then verify that it is part of this module.
+2. If 'app-tip' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'resetChangeCounter' since it isn't a known property of 'app-bill'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'tipAmount' since it isn't a known property of 'app-tip'.'
+,Chrome Headless 96.0.4664.110 (Windows 10) ERROR: 'Can't bind to 'total' since it isn't a known property of 'app-tip'.'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
