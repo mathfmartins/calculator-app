@@ -129,11 +129,15 @@ export class BillComponent implements OnInit, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.resetChangeCounter) {
-      this.billInput.setValue(0);
-      this.numberOfPeopleInput.setValue(1);
-      this.percentageValue = 0;
-      this.customInput.setValue('');
+      this.reset();
     }
+  }
+
+  reset(): void {
+    this.billInput.setValue(0);
+    this.numberOfPeopleInput.setValue(1);
+    this.percentageValue = 0;
+    this.customInput.setValue('');
   }
 
   ngOnDestroy(): void {
