@@ -1,3 +1,4 @@
+import { CalculatorModule } from './../calculator/calculator.module';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BillComponent } from './bill.component';
 
@@ -7,7 +8,7 @@ describe('BillComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BillComponent ],
+      imports: [CalculatorModule]
     })
     .compileComponents();
   });

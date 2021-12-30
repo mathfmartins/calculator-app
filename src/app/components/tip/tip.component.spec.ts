@@ -1,3 +1,4 @@
+import { CalculatorModule } from './../calculator/calculator.module';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TipComponent } from './tip.component';
@@ -8,7 +9,7 @@ describe('TipComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TipComponent ]
+      imports: [CalculatorModule]
     })
     .compileComponents();
   });
