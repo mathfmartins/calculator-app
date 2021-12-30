@@ -2,7 +2,7 @@ import { CalculatorModule } from './../calculator/calculator.module';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BillComponent } from './bill.component';
 
-describe('BillComponent', () => {
+describe(`${BillComponent.name}`, () => {
   let component: BillComponent;
   let fixture: ComponentFixture<BillComponent>;
 

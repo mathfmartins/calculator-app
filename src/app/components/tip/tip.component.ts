@@ -7,8 +7,8 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./tip.component.css'],
 })
 export class TipComponent implements OnInit {
-  @Input() tipAmount: number;
-  @Input() total: number;
+  @Input() tipAmount: number = 0;
+  @Input() total: number = 0;
   resetChangeCounter = 0;
   constructor() {}
 

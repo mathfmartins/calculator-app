@@ -4,7 +4,8 @@
       <p>Tip Amount</p>
       <sub>/ person</sub>
     </div>
-    <p class="section__values">{{tipAmount | currency }}</p>
+    <p class="section__values" *ngIf="tipAmount">{{tipAmount | currency }}</p>
+    <p class="section__values" *ngIf="!tipAmount">0.0</p>
 
   </div>
 
@@ -13,7 +14,8 @@
       <p>Total</p>
       <sub>/ person</sub>
     </div>
-    <p class="section__values">{{total | currency }}</p>
+    <p class="section__values" *ngIf="total">{{total | currency }}</p>
+    <p class="section__values" *ngIf="!total">0.0</p>
   </div>
   <button (click)="reset()" class="section__btn">Reset</button>
 </section>
