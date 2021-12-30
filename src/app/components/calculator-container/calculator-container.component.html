@@ -1,4 +1,4 @@
 <main>
-  <app-bill #bill [resetChangeCounter]="resetChangeCounter"></app-bill>
-  <app-tip (resetChangeEventEmitter)="resetChangeCounter = $event" [tipAmount]="bill.tipAmount" [total]="bill.total"></app-tip>
+  <app-bill #bill [resetChangeCounter]="tip.resetChangeCounter"></app-bill>
+  <app-tip #tip (resetChangeEventEmitter)="resetChangeCounter = $event" [tipAmount]="bill.tipAmount" [total]="bill.total"></app-tip>
 </main>

@@ -9,9 +9,7 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 export class TipComponent implements OnInit {
   @Input() tipAmount: number;
   @Input() total: number;
-  @Output() resetChangeEventEmitter = new EventEmitter();
   resetChangeCounter = 0;
-
   constructor() {}
 
   ngOnInit(): void {}
@@ -20,6 +18,5 @@ export class TipComponent implements OnInit {
     this.tipAmount = 0.0;
     this.total = 0.0;
     this.resetChangeCounter++;
-    this.resetChangeEventEmitter.next(this.resetChangeCounter)
   }
 }
