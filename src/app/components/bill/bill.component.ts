@@ -15,6 +15,14 @@ import { debounceTime } from 'rxjs/operators';
 import { Bill } from 'src/app/model/bill';
 import { SubSink } from 'subsink';
 
+interface ButtonParameters {
+  twoButton?: boolean;
+  tenButton?: boolean;
+  fiveButton?: boolean;
+  feefteenButton?: boolean;
+  twentyfiveButton?: boolean;
+}
+
 const TYPING_TIME = 300;
 @Component({
   selector: 'app-bill',
@@ -63,46 +71,28 @@ export class BillComponent implements OnInit, OnDestroy {
       (this.percentageValue = value), this.calculate();
       switch (this.percentageValue) {
         case 2:
-          this.twoButton = true;
-          this.tenButton = false;
-          this.fiveButton = false;
-          this.feefteenButton = false;
-          this.twentyfiveButton = false;
+          this.buttonActivate({ twoButton: true });
           break;
         case 5:
-          this.twoButton = false;
-          this.tenButton = false;
-          this.fiveButton = true;
-          this.feefteenButton = false;
-          this.twentyfiveButton = false;
+          this.buttonActivate({ fiveButton: true });
           break;
         case 10:
-          this.twoButton = false;
-          this.tenButton = true;
-          this.fiveButton = false;
-          this.feefteenButton = false;
-          this.twentyfiveButton = false;
+          this.buttonActivate({ tenButton: true });
           break;
         case 15:
-          this.twoButton = false;
-          this.tenButton = false;
-          this.fiveButton = false;
-          this.feefteenButton = true;
-          this.twentyfiveButton = false;
+          this.buttonActivate({ feefteenButton: true });
           break;
         case 25:
-          this.twoButton = false;
-          this.tenButton = false;
-          this.fiveButton = false;
-          this.feefteenButton = false;
-          this.twentyfiveButton = true;
+          this.buttonActivate({ twentyfiveButton: true });
           break;
         default:
-          this.twoButton = false;
-          this.tenButton = false;
-          this.fiveButton = false;
-          this.feefteenButton = false;
-          this.twentyfiveButton = false;
+          this.buttonActivate({
+            twoButton: false,
+            fiveButton: false,
+            tenButton: false,
+            feefteenButton: false,
+            twentyfiveButton: false,
+          });
           break;
       }
     });
@@ -110,19 +100,21 @@ export class BillComponent implements OnInit, OnDestroy {
     this.subs.sink = this.customInput.valueChanges
       .pipe(debounceTime(TYPING_TIME))
       .subscribe((value) => {
-        (this.percentageValue = value),
-        (this.twoButton = false);
-        this.tenButton = false;
-        this.fiveButton = false;
-        this.feefteenButton = false;
-        this.twentyfiveButton = false;
+        (this.percentageValue = value), this.twoButton;
+        this.buttonActivate({
+          twoButton: false,
+          fiveButton: false,
+          tenButton: false,
+          feefteenButton: false,
+          twentyfiveButton: false,
+        });
         this.calculate();
       });
   }
 
   calculate(): void {
     this.tipAmount =
-      ((this.billValue * this.percentageValue) / 100) / this.numberOfPeopleValue;
+      (this.billValue * this.percentageValue) / 100 / this.numberOfPeopleValue;
 
     this.total = this.billValue / this.numberOfPeopleValue + this.tipAmount;
   }
@@ -142,5 +134,19 @@ export class BillComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
+  }
+
+  buttonActivate({
+    twoButton = false,
+    tenButton = false,
+    fiveButton = false,
+    feefteenButton = false,
+    twentyfiveButton = false,
+  }: ButtonParameters): void {
+    this.twoButton = twoButton;
+    this.tenButton = tenButton;
+    this.fiveButton = fiveButton;
+    this.feefteenButton = feefteenButton;
+    this.twentyfiveButton = twentyfiveButton;
   }
 }
