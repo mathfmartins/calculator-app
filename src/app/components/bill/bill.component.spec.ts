@@ -22,7 +22,7 @@ describe(`${BillComponent.name}`, () => {
     expect(component).toBeTruthy();
   });
 
-  it(`#${BillComponent.prototype.calculate.name} should calculate tip amount when user types`, () => {
+  it(`#${BillComponent.prototype.calculate.name} should calculate tip amount when called`, () => {
     component.billValue = 100;
     component.percentageValue = 5;
     component.calculate();
