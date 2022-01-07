@@ -42,6 +42,19 @@ describe(`${BillComponent.name}`, () => {
     expect(component.customInput.value).toBe('');
   });
 
+  it('Should go to default switch case when subjectPercentage value is not 2, 5, 10, 15 or 25', (done) => {
+    fixture.detectChanges();
+    component.subjectPercentage.subscribe(() => {
+      expect(component.twoButton).toBe(false);
+      expect(component.fiveButton).toBe(false);
+      expect(component.tenButton).toBe(false);
+      expect(component.feefteenButton).toBe(false);
+      expect(component.twentyfiveButton).toBe(false);
+      done();
+    });
+    component.subjectPercentage.next(0);
+  });
+
   it(`Should emit 2 when clicked on 2% button`, (done) => {
     fixture.detectChanges();
     component.subjectPercentage.subscribe(() => {
@@ -81,7 +94,6 @@ describe(`${BillComponent.name}`, () => {
     });
 
     component.subjectPercentage.next(15);
-    // fixture.detectChanges();
   });
 
   it('Should emit 25 when clicked on 25% button', (done) => {
