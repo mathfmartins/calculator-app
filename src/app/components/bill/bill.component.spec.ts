@@ -10,12 +10,9 @@ describe(`${BillComponent.name}`, () => {
     await TestBed.configureTestingModule({
       imports: [CalculatorModule],
     }).compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(BillComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -43,5 +40,57 @@ describe(`${BillComponent.name}`, () => {
     expect(component.numberOfPeopleInput.value).toBe(1);
     expect(component.percentageValue).toBe(0);
     expect(component.customInput.value).toBe('');
+  });
+
+  it(`Should emit 2 when clicked on 2% button`, (done) => {
+    fixture.detectChanges();
+    component.subjectPercentage.subscribe(() => {
+      expect(component.twoButton).toBe(true);
+      done();
+    });
+
+    component.subjectPercentage.next(2);
+  });
+
+  it('Should emit 5 when clicked on 5% button', (done) => {
+    fixture.detectChanges();
+
+    component.subjectPercentage.subscribe(() => {
+      expect(component.fiveButton).toBe(true);
+      done();
+    });
+
+    component.subjectPercentage.next(5);
+  });
+
+  it('Should emit 10 when clicked on 10% button', (done) => {
+    fixture.detectChanges();
+    component.subjectPercentage.subscribe(() => {
+      expect(component.tenButton).toBe(true);
+      done();
+    });
+
+    component.subjectPercentage.next(10);
+  });
+
+  it('Should emit 15 when clicked on 15% button', (done) => {
+    fixture.detectChanges();
+    component.subjectPercentage.subscribe(() => {
+      expect(component.feefteenButton).toBe(true);
+      done();
+    });
+
+    component.subjectPercentage.next(15);
+    // fixture.detectChanges();
+  });
+
+  it('Should emit 25 when clicked on 25% button', (done) => {
+    fixture.detectChanges();
+    component.subjectPercentage.subscribe(() => {
+      expect(component.twentyfiveButton).toBe(true);
+      done();
+    });
+
+    component.subjectPercentage.next(25);
   });
 });
