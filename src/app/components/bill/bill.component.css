@@ -88,11 +88,6 @@ h1 {
    text-align: center;
    padding: 5px 2px;
 }
-/*
-.section__tips > button:focus {
-  background-color: #26c0ab;
-  color: #003F42;
-} */
 
 .active-button {
   background-color: #26c0ab !important;
