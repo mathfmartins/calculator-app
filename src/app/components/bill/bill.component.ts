@@ -33,9 +33,8 @@ export class BillComponent implements OnInit, OnDestroy {
   subs = new SubSink();
   billInput = new FormControl();
   numberOfPeopleInput = new FormControl();
-  subjectPercentage = new Subject<number>();
   customInput = new FormControl();
-  @Output() eventEmitter = new EventEmitter<Bill>();
+  subjectPercentage = new Subject<number>();
   billValue: number = 0;
   numberOfPeopleValue: number = 1;
   percentageValue: number = 0;
